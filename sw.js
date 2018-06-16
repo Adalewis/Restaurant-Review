@@ -1,3 +1,4 @@
+//Cache created
 const cache_mws = "restaurant";
 const files_Cache = [
   '/',
@@ -24,6 +25,8 @@ const files_Cache = [
   //'https://normalize-css.googlecode.com/svn/trunk/normalize.css'
   ];
 
+
+//Setting up listener for serviceWorker event "install"
 self.addEventListener("install", function(event) {
   // Perform install steps
   console.log("[Servicework] Install");
@@ -35,6 +38,7 @@ self.addEventListener("install", function(event) {
   );
 });
 
+//Setting up listener for serviceWorker event "activate"
 self.addEventListener("activate", function(event) {
   console.log("[Servicework] Activate");
   event.waitUntil(
@@ -49,6 +53,7 @@ self.addEventListener("activate", function(event) {
   );
 });
 
+//Setting up listener for serviceWorker event "fetch"
 self.addEventListener("fetch", (event) => {
   console.log("[ServiceWorker] Fetch");
   event.respondWith(
