@@ -1,6 +1,3 @@
-# Mobile Web Specialist Certification Course
----
-
 # Restaurant-review-app
 A restaurant review app that displays the location using the Mapbox api. This is a Udacity project with the focus using serviceworkers for a functioning offline experience.  
 
