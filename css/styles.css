@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
+
 body,td,th,p{
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
@@ -39,11 +40,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #maincontent {
   background-color: #f3f3f3;
   min-height: 100%;
+	width: 100%;
 }
 #footer {
   background-color: #444;
   color: #aaa;
-  font-size: 8pt;
+  font-size: calc(40px - 2vw);
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
@@ -61,7 +63,7 @@ nav h1 {
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+  font-size: calc(60px - 2vw);
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -72,27 +74,26 @@ nav h1 a {
     background-color: #eee;
     font-size: 17px;
     margin: 0;
-    width: calc(50% - 80px);
+    width: 100%;
 }
-
 /* Display list items side by side */
 #breadcrumb li {
     display: inline;
+		font-size: calc(50px - 2vw);
 }
-
 /* Add a slash symbol (/) before/behind each list item */
 #breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
+		font-size: calc(50px - 2vw);
 }
-
 /* Add a color to all links inside the list */
 #breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
+		font-size: calc(50px - 2vw);
 }
-
 /* Add a color on mouse-over */
 #breadcrumb li a:hover {
     color: #01447e;
@@ -129,7 +130,6 @@ nav h1 a {
   padding: 0 10px;
   width: 200px;
 }
-
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
   background-color: #f3f3f3;
@@ -140,17 +140,17 @@ nav h1 a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-
+	width: 100%;
 }
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
-  margin: 15px;
+  margin: .7vw;
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  width: 17vw;
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
@@ -186,7 +186,6 @@ nav h1 a {
   text-decoration: none;
   text-transform: uppercase;
 }
-
 /* ====================== Restaurant Details ====================== */
 .inside header {
   position: fixed;
@@ -196,21 +195,22 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
+  height: 33vw;
+  position: static;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 100%;
+	margin: 8vw 0 0 0;
 }
 .inside #map {
   background-color: #ccc;
-  height: 100%;
+  height: 38vw;
   width: 100%;
 }
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
+  width: 100%;
 }
 #restaurant-name {
   color: #f18200;
@@ -226,7 +226,7 @@ nav h1 a {
 	width: 90%;
 }
 #restaurant-address {
-  font-size: 12pt;
+  font-size: calc(60px - 2vw);
   margin: 10px 0px;
 }
 #restaurant-cuisine {
@@ -244,10 +244,10 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
-  width: 50%;
+  padding: 5vw 40px 30px;
 }
 #reviews-container {
+	margin: 5vw 0 0 0;
   padding: 30px 40px 80px;
 }
 #reviews-container h2 {
@@ -271,25 +271,43 @@ nav h1 a {
   padding: 0 20px 20px;
   position: relative;
   width: 85%;
+	font-size: calc(50px - 2vw);
 }
 #reviews-list li p {
   margin: 0 0 10px;
 }
 #restaurant-hours td {
   color: #666;
+	font-size: calc(50px - 2vw);
 }
 
-@media screen and (max-width: 764px) {
+@media screen and (min-width: 924px) and (max-width: 1392px) {
+	#restaurants-list li {
+		width: 24vw;
+	}
+}
+
+@media screen and (min-width: 765px) and (max-width: 923px) {
+	#restaurants-list li {
+		width: 37vw;
+	}
+}
+
+@media screen and (min-width: 451px) and (max-width: 764px) {
   #restaurants-list {
-		margin-top: 7%;
+		margin-top: 4%;
   }
 	#restaurants-list li {
 		width: auto;
 	}
-	
+}
 
-@media screen and (min-width: 972px) and (max-width: 1120px){
-  #restaurants-list li {
-		width: 40%;
-  }
+@media screen and (max-width: 450px) {
+	#restaurants-list {
+		margin-top: 8%;
+	}
+	#restaurants-list li {
+		width: auto;
+		font-weight: bold;
+	}
 }
